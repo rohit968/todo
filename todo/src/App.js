@@ -19,16 +19,13 @@ const App = () => {
   };
 
   const deleteTask = (id) => {
-    setTask((oldtask) => {
+    setTaskAdded((oldtask) => {
       return oldtask.filter((taskElem, index) => {
         return index !== id;
       });
     });
   };
 
-  const doneTask = (id) => {
-    
-  }
 
   return (
     <div className="todo_container h-screen flex justify-center items-center">
@@ -38,15 +35,14 @@ const App = () => {
           <input className="inline w-48 p-1 border-none mr-6 rounded-lg" type="text" placeholder="Enter a task..." onChange={handleChange} value={tasks}/>
           <button className="inline bg-blue-300 hover:bg-blue-500 text-white font-bold py-1 px-2 rounded " onClick={added} type="submit">Add Task</button>
         </div> 
-        <div className="flex">
-          <ol className="text-white">
+        <div className="flex w-48">
+          <ol className="text-white w-full">
             {taskAdded.map((task, index) => {
               return <TaskList
                 key = {index}
                 id = {index}
                 task = {task}
                 onSelect = {deleteTask}
-                onDone = {doneTask}
                 />
             }
             )}
