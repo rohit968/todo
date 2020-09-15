@@ -16,4 +16,26 @@
 
 .strikethrough {
   text-decoration: line-through;
+  text-decoration-color: black;
+  text-decoration-thickness: thick;
+}
+
+.todo_list {
+  width: 80%;
+}
+
+.red {
+  color: #f16969;
+}
+
+.red:hover {
+  color: #f72d2d;
+}
+
+.green {
+  color: rgb(106, 248, 106);
+}
+
+.green:hover {
+  color: rgb(44, 247, 61);
 }

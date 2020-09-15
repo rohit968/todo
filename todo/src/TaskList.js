@@ -1,21 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const TaskList = (props) => {
 
-    const [line, setLine] = useState(false);
-
-    const doneTask = () => {
-        setLine(true);
-        };
-
     return (
-        <div className="flex flex-row justify-between items-center">
-            <li style = {{textDecoration : line ? "line-through" : "none"}}>{props.task}</li>
 
-            <div className="inline flex flex-row justify-between">
-                <i className="fa fa-check-circle w3-xlarge cursor-pointer hover:red-500" onClick={doneTask}>
+        <div className="flex flex-row justify-start items-center text-lg capitalize ">
+            <li className={props.isComplete ? 'strikethrough w-4/5' : 'w-4/5'}>{props.task}</li>
+
+            <div className=" flex flex-row justify-between w-1/5">
+                <i className="fa fa-check-circle w3-xlarge cursor-pointer green" onClick={props.onComplete}>
                 </i>
-                <i className="fa fa-times-circle w3-xlarge cursor-pointer hover:red-500" onClick={() => {
+                <i className="fa fa-times-circle w3-xlarge cursor-pointer red" onClick={() => {
                     props.onSelect(props.id)
                 }}></i>
             </div>
