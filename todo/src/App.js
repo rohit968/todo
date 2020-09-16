@@ -11,8 +11,12 @@ const App = () => {
 
   const [taskAdded, setTaskAdded] = useState([]);
 
-  const onComplete = () => {
-    setTask({isComplete: !tasks.isComplete})
+  const onComplete = (id) => {
+    return taskAdded.filter((taskElem, index) => {
+        if (index === id) {
+          return setTask({...tasks, isComplete: !tasks.isComplete})
+      }
+    })
   }
 
   const handleChange = (e) => {
